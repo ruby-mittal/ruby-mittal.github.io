@@ -1,0 +1,469 @@
+/* Shared stylesheet for every page. Colors live in :root so they are easy to change. */
+
+:root {
+  --text: #333;
+  --heading: #222;
+  --muted: #666;
+  --accent: #3b6a9a;      /* muted blue: links, current tab, hover */
+  --accent-dark: #2c5078; /* accent on hover */
+  --line: #e5e5e5;
+  --placeholder: #e9e9e9;
+  --page-width: 760px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+}
+
+/* One shared style for page and section headings
+   ("Work in Progress", "Course Instructor", "Teaching Assistant", "Artwork") */
+.page-title,
+.section-title {
+  color: var(--accent);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2.25rem 0 0.75rem;
+}
+
+/* Hidden on screen but read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Top navigation ---------- */
+
+.site-header {
+  border-top: 4px solid var(--accent); /* thin blue strip across the top */
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.nav-name {
+  color: var(--heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.nav-name:hover {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Page content ---------- */
+
+main {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* ---------- Home ---------- */
+
+.home-name {
+  font-size: 2.6rem;
+  margin-bottom: 1.25rem;
+}
+
+/* The photo floats right and the bio text wraps around its round edge */
+.intro {
+  display: flow-root;
+}
+
+.headshot {
+  float: right;
+  width: 300px;
+  height: 300px;
+  margin: 0.25rem 0 1rem 1.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  shape-outside: ellipse(50% 60%); /* taller than the photo, so the text curves gently */
+  shape-margin: 1rem;
+  background: var(--placeholder);
+}
+
+.bio {
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.bio p {
+  margin: 0 0 0.9rem;
+}
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.75rem;
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.contact-links svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ---------- Research ---------- */
+
+.paper {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.paper:first-of-type {
+  border-top: 1px solid var(--line);
+}
+
+.paper-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.paper-coauthors,
+.entry-meta {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.abstract-toggle {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.abstract-toggle:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.abstract-toggle::after {
+  content: " +";
+}
+
+.abstract-toggle[aria-expanded="true"]::after {
+  content: " -";
+}
+
+.abstract {
+  margin: 0.5rem 0 0;
+  color: var(--text);
+  font-size: 0.97rem;
+}
+
+/* ---------- Teaching (entries reuse .paper styles) ---------- */
+
+.teaching-section + .teaching-section {
+  margin-top: 3rem;
+}
+
+/* Small all-caps line above each course, e.g. "WINTER 2023 · SPRING 2023" */
+.entry-when {
+  margin: 0 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.entry-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Art grid ---------- */
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.art-grid figure {
+  margin: 0;
+}
+
+.art-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--placeholder);
+  cursor: zoom-in;
+}
+
+.art-thumb img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: opacity 0.15s;
+}
+
+.art-thumb:hover img {
+  opacity: 0.85;
+}
+
+.art-grid figcaption {
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.lightbox::backdrop {
+  background: rgba(20, 20, 20, 0.88);
+}
+
+.lightbox-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 4.5rem;
+}
+
+.lightbox figure {
+  margin: 0;
+  text-align: center;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 9rem);
+  margin: 0 auto;
+  object-fit: contain;
+  background: var(--placeholder);
+}
+
+.lightbox figcaption {
+  margin-top: 0.75rem;
+  color: #eee;
+  font-size: 0.95rem;
+}
+
+.lightbox-btn {
+  position: fixed;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 2.25rem;
+  line-height: 1;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.lightbox-btn:hover {
+  opacity: 1;
+}
+
+.lightbox-btn:focus-visible {
+  outline-color: #fff;
+}
+
+.lightbox-close {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.lightbox-prev {
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ---------- Phones and small tablets ---------- */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  main {
+    padding-top: 1.75rem;
+  }
+
+  .home-name {
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .headshot {
+    float: none;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .home-name {
+    text-align: center;
+  }
+
+  .art-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lightbox-inner {
+    padding: 3.5rem 0.75rem;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    top: auto;
+    bottom: 0.75rem;
+    transform: none;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}

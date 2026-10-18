@@ -1,0 +1,11 @@
+# Mac clutter
+.DS_Store
+
+# Claude Code settings (local only)
+.claude/
+
+# Full-size original photos: kept on this Mac, not uploaded.
+# The site uses the smaller copies (headshot-circle.jpg, images/art/painting-NN.jpg).
+images/headshot.jpg
+images/art/IMG_*.jpg
+images/art/1269978_*.jpg

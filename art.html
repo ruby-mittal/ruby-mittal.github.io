@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artwork | Ruby Mittal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="nav-name" href="index.html">Ruby Mittal</a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="files/Ruby_Mittal_CV.pdf" target="_blank" rel="noopener">CV</a></li>
+        <li><a href="art.html" aria-current="page">Artwork</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">Artwork</h1>
+
+    <!-- To update a painting: replace images/art/painting-NN.jpg (same file name),
+         then change its alt text and its "Location, Year" caption below.
+         Thumbnails are square crops; style="object-position: X% Y%" moves the crop. -->
+    <ul class="art-grid">
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Ink drawing on yellow paper, half mandala and half sunflower">
+            <img src="images/art/painting-02.jpg" alt="Ink drawing on yellow paper, half mandala and half sunflower" loading="lazy">
+          </button>
+          <figcaption>2020</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Painting of pine trees at sunset over a lake, held in hand">
+            <img src="images/art/painting-08.jpg" alt="Painting of pine trees at sunset over a lake, held in hand" loading="lazy">
+          </button>
+          <figcaption>2026</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Colorful oil pastel portrait of a face, with the pastels beside it">
+            <img src="images/art/painting-05.jpg" alt="Colorful oil pastel portrait of a face, with the pastels beside it" style="object-position: 90% 50%" loading="lazy">
+          </button>
+          <figcaption>2020</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Ink sketch of a rose window, held up in front of the building it shows">
+            <img src="images/art/painting-06.jpg" alt="Ink sketch of a rose window, held up in front of the building it shows" style="object-position: 25% 50%" loading="lazy">
+          </button>
+          <figcaption>Bristol, 2019</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Round painting of a face framed by flowers">
+            <img src="images/art/painting-07.jpg" alt="Round painting of a face framed by flowers" loading="lazy">
+          </button>
+          <figcaption>2022</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Colored pencil sketch of a doorway, shown in the room it depicts, with pencils">
+            <img src="images/art/painting-11.jpg" alt="Colored pencil sketch of a doorway, shown in the room it depicts, with pencils" style="object-position: 50% 65%" loading="lazy">
+          </button>
+          <figcaption>Zanzibar, 2021</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Sketch of a calla lily plant, held up next to the real plant">
+            <img src="images/art/painting-10.jpg" alt="Sketch of a calla lily plant, held up next to the real plant" loading="lazy">
+          </button>
+          <figcaption>Addis Ababa, 2019</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Black ink mandala drawing">
+            <img src="images/art/painting-04.jpg" alt="Black ink mandala drawing" loading="lazy">
+          </button>
+          <figcaption>2020</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Framed colorful drawing filled with small illustrations, including a Las Vegas sign, beside a vase of flowers">
+            <img src="images/art/painting-12.jpg" alt="Framed colorful drawing filled with small illustrations, including a Las Vegas sign, beside a vase of flowers" style="object-position: 50% 85%" loading="lazy">
+          </button>
+          <figcaption>2026</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="art-thumb" type="button" aria-label="View larger: Painting of a mountain sunset on a work table, with paints and the reference photo">
+            <img src="images/art/painting-09.jpg" alt="Painting of a mountain sunset on a work table, with paints and the reference photo" style="object-position: 57% 50%" loading="lazy">
+          </button>
+          <figcaption>Sequoia, 2024</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Painting viewer">
+    <div class="lightbox-inner">
+      <figure>
+        <img id="lightbox-image" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+    <button class="lightbox-btn lightbox-close" id="lightbox-close" type="button" aria-label="Close">&times;</button>
+    <button class="lightbox-btn lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous painting">&lsaquo;</button>
+    <button class="lightbox-btn lightbox-next" id="lightbox-next" type="button" aria-label="Next painting">&rsaquo;</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
